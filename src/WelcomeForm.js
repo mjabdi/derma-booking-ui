@@ -27,7 +27,7 @@ import logoImage from './images/logo.png';
 import LiveHelpIcon from '@material-ui/icons/LiveHelp';
 import faq from './FAQ';
 
-import gynaeImage from './images/gynae-clinic.png'
+import gynaeImage from './images/Clear-skin-clinic.png'
 
 
 function Copyright() {
@@ -162,7 +162,8 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "32px"
   },
   gynaeLogo:{
-
+    width:"170px",
+    height: "103px"
   }
 
 }));
@@ -317,7 +318,7 @@ const getStartedClicked = (event) => {
               isMobile ? classes.textContentMobile : classes.textContent
             }
           >
-           Gynae Clinic is proud to offer an exceptional level of service that consistently exceeds the expectations of our patients.
+           Flexible appointment for private dermatology services whenever you need.
           </p>
 
           <p
@@ -325,7 +326,7 @@ const getStartedClicked = (event) => {
               isMobile ? classes.textContentMobile : classes.textContent
             }
           >
-           Flexible, same-day appointments, a dedicated and talented team of doctors and staff, and the latest treatments set our clinic apart from the rest.
+           Highly Experienced Doctors.
           </p>
 
           <p
@@ -333,9 +334,18 @@ const getStartedClicked = (event) => {
               isMobile ? classes.textContentMobile : classes.textContent
             }
           >
-           Our Gynae Clinic is conveniently located on Harley Street, central London to ensure all your gynaecological needs are met quickly, easily, and with minimal disruption to your schedule.
+             No card details or payment necessary.
           </p>
 
+          <p
+            className={
+              isMobile ? classes.textContentMobile : classes.textContent
+            }
+          >
+            Plans change and you may need to cancel or rearrange your
+            appointment. We take payment for your visit only when you attend the
+            clinic.
+          </p>
           <Button
             variant="contained"
             className={classes.getStartedButton}
@@ -385,15 +395,17 @@ const getStartedClicked = (event) => {
               tabIndex={-1}
             >
               <div style={{ textAlign: "justify", padding: "10px" }}>
-                Medical Express Clinic will not contact you for any other reason
+              Medical Express Clinic will not contact you for any other reason
                 than to share your test results, and certificate if selected,
                 via the email address provided. The information provided to us
                 via this registration form is never shared with any other
                 organisations, except when this is required by law. Information
                 provided will never be used for marketing purposes, you cannot
-                opt in. In the case of a positive swab result, our doctor will
+                opt in. In the case of a notable health result, our doctor will
                 call on the telephone number provided to inform you of your
-                result and provide additional advice or guidance.
+                result and provide additional advice or guidance. If we cannot
+                get hold of you, we will email you asking you to contact the
+                clinic.
               </div>
             </DialogContentText>
           </DialogContent>
@@ -423,7 +435,7 @@ const getStartedClicked = (event) => {
                   <React.Fragment>
                     <p
                       style={{
-                        borderLeft: "4px solid #f280c4",
+                        borderLeft: "4px solid #323e9a",
                         background: "#eee",
                         fontWeight: "600",
                         paddingLeft: "10px",
@@ -431,7 +443,7 @@ const getStartedClicked = (event) => {
                         lineHeight: "30px",
                       }}
                     >
-                      <span style={{ color: "#f280c4", fontSize: "24px" }}>
+                      <span style={{ color: "#323e9a", fontSize: "24px" }}>
                         {" "}
                         Q.{" "}
                       </span>

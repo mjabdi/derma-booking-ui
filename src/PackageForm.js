@@ -56,16 +56,16 @@ const useStyles = makeStyles((theme) => ({
   }));
 
   const Packages = [
-    {packageName: 'Private Consultation'},
-    {packageName: `Coil fitting/Coil removal`},
-    {packageName: `Well Woman Check`},
-    {packageName: `Sexual health screening`},
-    {packageName: `Pre-pregnancy/Fertility check`},
-    {packageName: `Gynaecological ultrasound`},
-    {packageName: `Cervical cancer vaccination`},
-    {packageName: `HPV`},
-    {packageName: `Pap Smear`},
-    {packageName: `Warts treatment`},
+    {packageName: 'PRIVATE CONSULTATION WITH CONSULTANT DERMATOLOGIST'},
+    {packageName: `FREE CONSULTATION FOR AESTHETIC TREATMENTS
+    BOTOX`},
+    {packageName: `RADIOFREQUNCY`},
+    {packageName: `LASER HAIR`},
+    {packageName: `FILLERS`},
+    {packageName: `MOLE MAPPING / REMOVAL`},
+    {packageName: `DERMABRASION`},
+    {packageName: `PEELS`},
+    {packageName: `WART REMOVAL`},
   ]
 
 export default function PackageForm() {

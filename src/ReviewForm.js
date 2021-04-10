@@ -275,7 +275,7 @@ export default function ReviewForm() {
                         {state.package}{" "}
                       </span>
                     </li>
-                    <li className={classes.li}>
+                    {/* <li className={classes.li}>
                       <span className={classes.infoTitleTime}>
                         <FontAwesomeIcon
                           icon={faPoundSign}
@@ -284,7 +284,7 @@ export default function ReviewForm() {
                         Deposit:
                       </span>
                       <span className={classes.infoDataPrice}> £100.00 </span>
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
               </Grid>

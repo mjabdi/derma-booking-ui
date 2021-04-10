@@ -59,23 +59,23 @@ export default async function ValidateStep(state, setState, step) {
     //   }
     // }
 
-    if (!error) {
-      if (!state.bookingRef) {
-        try {
-          const res = await BookService.getNewReference();
-          if (res && res.data && res.data.ref) {
-            setState((state) => ({ ...state, bookingRef: res.data.ref }));
-          }
-          else
-          {
-            error = true;
-          }
-        } catch (ex) {
-          console.error(ex);
-          error = true;
-        }
-      }
-    }
+    // if (!error) {
+    //   if (!state.bookingRef) {
+    //     try {
+    //       const res = await BookService.getNewReference();
+    //       if (res && res.data && res.data.ref) {
+    //         setState((state) => ({ ...state, bookingRef: res.data.ref }));
+    //       }
+    //       else
+    //       {
+    //         error = true;
+    //       }
+    //     } catch (ex) {
+    //       console.error(ex);
+    //       error = true;
+    //     }
+    //   }
+    // }
   }
 
   return !error;

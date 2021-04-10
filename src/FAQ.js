@@ -6,7 +6,7 @@ const faq = [
     },
     {
         question: "What will I be charged at the clinic?",
-        answer: "Clinic staff will explain all the services that we will be delivered to you and their associated costs. the value of your deposit will be deducted from your total bill at the point of payment. "
+        answer: "Clinic staff will explain all the services that we will be delivered to you and their associated costs."
     },
     {
         question: "Can I bring somebody to my appointment?",

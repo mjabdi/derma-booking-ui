@@ -154,7 +154,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-const steps = ['Appoinment Date', 'Appoinment Time', 'Basic Info','Choose Service' , 'Review', 'Pay Deposit' ];
+const steps = ['Appoinment Date', 'Appoinment Time', 'Basic Info','Choose Service' , 'Review'];
 
 function getStepContent(step) {
   switch (step) {
@@ -168,8 +168,6 @@ function getStepContent(step) {
       return <PackageForm />;
     case 4:
       return <ReviewForm />;
-    case 5: 
-        return <PayForm />;   
     default:
       throw new Error("Unknown step");
   }
@@ -265,6 +263,8 @@ const setActiveStep = (step) =>
 
     var promiseArray = [];
 
+    setSubmiting(true)
+
     BookService.getNewReference().then( (res) => {
 
       const ref = res.data.ref;
@@ -282,7 +282,7 @@ const setActiveStep = (step) =>
           email: state.email,
           phone: state.phone,
           notes: state.notes,
-          service: state.package,
+          package: state.package,
           bookingDate: dateformat(new Date(state.bookingDate.toUTCString().slice(0, -4)),'yyyy-mm-dd'),
           bookingTime: state.bookingTime,
           bookingRef: ref,
@@ -329,6 +329,7 @@ const setActiveStep = (step) =>
     //   submitForm();
 
     // }else 
+
     
     try{
       setValidating(true)
@@ -336,7 +337,15 @@ const setActiveStep = (step) =>
       setValidating(false)
 
       if (isValid) {
-        setActiveStep(activeStep + 1);
+       
+        if (activeStep === steps.length - 1)
+        {
+          submitForm()
+        }else
+        {
+          setActiveStep(activeStep + 1);
+        }
+
        }
     }
     catch(ex)
@@ -443,30 +452,17 @@ const setActiveStep = (step) =>
                     </Button>
                   )}
 
-                  {(activeStep === 2 || activeStep === 3) &&
-                    state.persons &&
-                    state.persons.length >= 1 && (
-                      <Button
-                        // variant="contained"
-                        color="secondary"
-                        onTouchTap={proceedToSubmit}
-                        onClick={proceedToSubmit}
-                        className={classes.button}
-                      >
-                        Skip to Submit
-                      </Button>
-                    )}
 
-              {activeStep < steps.length - 1 && (
+              {activeStep < steps.length  && (
                 <Button
-                    disabled={submiting || (activeStep === steps.length - 2 && !state.bookingRef)}
+                    disabled={submiting}  
                     variant="contained"
                     color="primary"
                     onTouchTap={handleNext}
                     onClick={handleNext}
                     className={classes.button}
                   >
-                    {activeStep === steps.length - 2 ? "Proceed to Payment" : "Next"}
+                    {activeStep === steps.length - 1 ? "SUBMIT" : "Next"}
                   </Button>
               )}
                   
@@ -513,15 +509,17 @@ const setActiveStep = (step) =>
               tabIndex={-1}
             >
               <div style={{ textAlign: "justify", padding: "10px" }}>
-                Medical Express Clinic will not contact you for any other reason
+              Medical Express Clinic will not contact you for any other reason
                 than to share your test results, and certificate if selected,
                 via the email address provided. The information provided to us
                 via this registration form is never shared with any other
                 organisations, except when this is required by law. Information
                 provided will never be used for marketing purposes, you cannot
-                opt in. In the case of a positive swab result, our doctor will
+                opt in. In the case of a notable health result, our doctor will
                 call on the telephone number provided to inform you of your
-                result and provide additional advice or guidance.
+                result and provide additional advice or guidance. If we cannot
+                get hold of you, we will email you asking you to contact the
+                clinic.
               </div>
             </DialogContentText>
           </DialogContent>
@@ -551,7 +549,7 @@ const setActiveStep = (step) =>
                   <React.Fragment>
                     <p
                       style={{
-                        borderLeft: "4px solid #f280c4",
+                        borderLeft: "4px solid #323e9a",
                         background: "#eee",
                         fontWeight: "600",
                         paddingLeft: "10px",
@@ -559,7 +557,7 @@ const setActiveStep = (step) =>
                         lineHeight: "30px",
                       }}
                     >
-                      <span style={{ color: "#f280c4", fontSize: "24px" }}>
+                      <span style={{ color: "#323e9a", fontSize: "24px" }}>
                         {" "}
                         Q.{" "}
                       </span>
