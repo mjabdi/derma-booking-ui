@@ -57,8 +57,7 @@ const useStyles = makeStyles((theme) => ({
 
   const Packages = [
     {packageName: 'PRIVATE CONSULTATION WITH CONSULTANT DERMATOLOGIST'},
-    {packageName: `FREE CONSULTATION FOR AESTHETIC TREATMENTS
-    BOTOX`},
+    {packageName: `FREE CONSULTATION FOR AESTHETIC TREATMENTS AND BOTOX`},
     {packageName: `RADIOFREQUNCY`},
     {packageName: `LASER HAIR`},
     {packageName: `FILLERS`},
@@ -105,6 +104,10 @@ export default function PackageForm() {
       <Typography className={classes.pageTitle} variant="h6" gutterBottom>
         Choose your Service
       </Typography>
+
+      <p style={{textAlign:"left", color:"#555"}}>
+      <i> * All appointments and treatments are performed by consultants dermatologist. </i>
+      </p>
 
       <Grid container spacing={1} alignItems="baseline" style={{marginTop:"10px"}}>
         {Packages.map((item) => (
